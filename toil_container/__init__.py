@@ -8,6 +8,8 @@ from toil_container.containers import docker_call, singularity_call
 
 from toil_container.jobs import ContainerJob
 
+from toil_container.services import ContainerService
+
 from toil_container.parsers import ContainerArgumentParser, ToilShortArgumentParser
 
 from toil_container.exceptions import (

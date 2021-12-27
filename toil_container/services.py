@@ -76,13 +76,13 @@ class ContainerService(Job.Service):
         """
         self.options = options
 
-        if not kwargs.get("displayName"):
-            kwargs["displayName"] = self.__class__.__name__
+        #if not kwargs.get("displayName"):
+        #    kwargs["displayName"] = self.__class__.__name__
 
-        if getattr(options, "batchSystem", None) == "custom_lsf":
-            data = {"runtime": runtime or os.getenv("TOIL_CONTAINER_RUNTIME")}
-            kwargs["unitName"] = str(kwargs.get("unitName", "") or "")
-            kwargs["unitName"] += lsf._encode_dict(data)
+        #if getattr(options, "batchSystem", None) == "custom_lsf":
+        #    data = {"runtime": runtime or os.getenv("TOIL_CONTAINER_RUNTIME")}
+        #    kwargs["unitName"] = str(kwargs.get("unitName", "") or "")
+        #    kwargs["unitName"] += lsf._encode_dict(data)
 
         super().__init__(*args, **kwargs)
 

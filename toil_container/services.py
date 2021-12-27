@@ -87,7 +87,7 @@ class ContainerService(Job.Service):
         super().__init__(*args, **kwargs)
 
         # set jobName to displayName so that logs are named with displayName
-        self.jobName = slugify(kwargs["displayName"], separator="_")
+        self.jobName = slugify(self.__class__.__name__, separator="_")
 
     def call(self, args, cwd=None, env=None, check_output=False):
         """

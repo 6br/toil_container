@@ -6,7 +6,7 @@ import subprocess
 
 import coloredlogs
 from slugify import slugify
-from toil.job import Service
+from toil.job import Job
 from toil.statsAndLogging import StatsAndLogging
 
 from toil.batchSystems import registry
@@ -51,7 +51,7 @@ StatsAndLogging.logWithFormatting = staticmethod(logWithFormatting)
 registry.addBatchSystemFactory("custom_lsf", lambda: lsf.CustomLSFBatchSystem)
 
 
-class ContainerService(Service):
+class ContainerService(Job.Service):
 
     """A service class with a `call` method for containerized system calls."""
 
